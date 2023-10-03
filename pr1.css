@@ -1,0 +1,21 @@
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-image: url('../Proyecto/images.jpeg'); /* Agrega la ruta de tu imagen aquí */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Añade un borde para resaltar las cartas */
+}
