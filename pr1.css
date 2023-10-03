@@ -1,21 +1,22 @@
+/* Ajusta el diseño de la memoria */
 .memory-board {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    gap: 10px;
-    max-width: 480px;
-    margin: 0 auto;
-    margin-top: 50px;
+    display: grid; /* Utiliza un diseño de cuadrícula */
+    grid-template-columns: repeat(4, 80px); /* Crea 4 columnas de 80px cada una */
+    gap: 40px; /* Define un espacio de 20px entre las cartas */
+    max-width: 400px; /* Establece un ancho máximo de 400px */
+    margin: 0 auto; /* Centra el tablero horizontalmente */
+    margin-top: 50px; /* Añade un margen superior de 50px */
 }
 
 .card {
-    width: 100px;
-    height: 100px;
-    background-image: url('../Proyecto/images.jpeg'); /* Agrega la ruta de tu imagen aquí */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    cursor: pointer;
-    border: 1px solid #ccc; /* Añade un borde para resaltar las cartas */
+    width: 60px; /* Establece un ancho de 60px para cada tarjeta */
+    height: 60px; /* Establece una altura de 60px para cada tarjeta */
+    background-image: url('../Proyecto/images.jpeg'); /* Establece la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el espacio */
+    display: flex; /* Usa un modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    font-size: 30px; /* Define el tamaño de fuente a 30px */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+    border: 4px solid #ccc; /* Añade un borde de 4px sólido de color gris claro */
 }
