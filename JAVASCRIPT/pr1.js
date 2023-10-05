@@ -52,7 +52,7 @@ function createCard(value) {
     const card = document.createElement('div');
     card.classList.add('card');
     const image = document.createElement('img');
-    image.src = '../Proyecto/images.jpeg'; 
+    image.src = '../OTROS/images.jpeg'; 
     image.style.width = '60px'; 
     image.style.height = '60px'; 
     card.appendChild(image);

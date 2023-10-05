@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="../CSS/pr1.css">
+    <style>
+        .button {
+            background-color: #577ab6;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-container">
+            <div id="timer">Tiempo: 0 segundos</div>
+            <div id="score">Puntaje: 0</div>
+            <div>
+                <button onclick="setDifficulty('easy')" class="button">Fácil</button>
+                <button onclick="setDifficulty('medium')" class="button">Medio</button>
+                <button onclick="setDifficulty('hard')" class="button">Difícil</button>
+            </div>
+        </div>
+        <div class="game-container">
+            <div class="memory-board" id="memoryBoard"></div>
+            <div class="selected-cards" id="selectedCards"></div>
+        </div>
+    </div>
+    <script src="../JAVASCRIPT/pr1.js"></script>
+</body>
+</html>

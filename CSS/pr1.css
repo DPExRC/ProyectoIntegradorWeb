@@ -12,7 +12,7 @@
 .card {
     width: 60px;
     height: 60px;
-    background-image: url('../Proyecto/images.jpeg');
+    background-image: url('../OTROS/images.jpeg');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@
 .container {
     width: 50%;
     margin: 0 auto;
-    background-color: #665a5a;
+    background-color: #907171;
     display: flex;
     align-items: center;
     padding: 20px;
