@@ -1,22 +1,78 @@
 /* Ajusta el diseño de la memoria */
 .memory-board {
-    display: grid; /* Utiliza un diseño de cuadrícula */
-    grid-template-columns: repeat(4, 80px); /* Crea 4 columnas de 80px cada una */
-    gap: 40px; /* Define un espacio de 20px entre las cartas */
-    max-width: 400px; /* Establece un ancho máximo de 400px */
-    margin: 0 auto; /* Centra el tablero horizontalmente */
-    margin-top: 50px; /* Añade un margen superior de 50px */
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
+/* Estilos para las cartas del juego */
 .card {
-    width: 60px; /* Establece un ancho de 60px para cada tarjeta */
-    height: 60px; /* Establece una altura de 60px para cada tarjeta */
-    background-image: url('../Proyecto/images.jpeg'); /* Establece la imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el espacio */
-    display: flex; /* Usa un modelo de caja flexible */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
-    font-size: 30px; /* Define el tamaño de fuente a 30px */
-    cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
-    border: 4px solid #ccc; /* Añade un borde de 4px sólido de color gris claro */
+    width: 60px;
+    height: 60px;
+    background-image: url('../Proyecto/images.jpeg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+/* Estilos para el contenedor del juego */
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* Estilos para el contenedor de información */
+.info-container {
+    text-align: left;
+    color: #fff;
+    max-width: 200px;
+}
+
+/* Estilos para elementos con ID 'timer' y 'score' */
+#timer, #score {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #665a5a;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para información del juego */
+.game-info {
+    margin-bottom: 20px;
+}
+
+/* Estilos de animación para las cartas */
+.flipping {
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) perspective(1000px);
+    transition: transform 0.5s;
+}
+
+.flipping.flipped {
+    transform: rotateY(180deg) perspective(1000px);
+}
+
+/* Efecto de escala al hacer hover sobre las cartas */
+.card:hover {
+    transform: scale(1.1);
 }
