@@ -12,19 +12,17 @@ let numCols = 4;
 /**
  * Inicia el temporizador del juego.
  */
+
 function startTimer() {
     timerInterval = setInterval(() => {
         timer++;
-        const minutes = Math.floor(timer / 60);
-        const seconds = timer % 60;
-        const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        document.getElementById('timer').textContent = `Tiempo: ${formattedTime}`; 
+        const formattedTime = formatTime(timer); // Aquí utilizamos formatTime para obtener el tiempo formateado
+        document.getElementById('timer').textContent = `Tiempo : ${formattedTime}`; 
     }, 1000);
 }
 
-
 /**
- * Baraja los elementos de un array.
+ * Baraja los elementos del array.
  * @param {Array} array - Array a ser barajado.
  * @returns {Array} - Array barajado.
  */
@@ -53,8 +51,8 @@ function createCard(value) {
     card.classList.add('card');
     const image = document.createElement('img');
     image.src = '../OTROS/images.jpeg'; 
-    image.style.width = '60px'; 
-    image.style.height = '60px'; 
+    let n = 3
+    image.style.width = image.style.height = n+'px'; 
     card.appendChild(image);
     card.addEventListener('click', () => flipCard(card));
     card.dataset.value = value;
@@ -105,7 +103,8 @@ function checkMatch() {
 
         if (matchedCards.length === letters.length) {
             clearInterval(timerInterval);
-            alert(`¡Has ganado! Movimientos: ${moves} - Tiempo: ${timer} segundos`);
+            const formattedTime = formatTime(timer);
+            alert(`¡Has ganado! Movimientos: ${moves} - Tiempo: ${formattedTime}`);
         }
 
     } else {
@@ -114,6 +113,12 @@ function checkMatch() {
         });
         flippedCards = [];
     }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
 /**
@@ -153,8 +158,7 @@ function setDifficulty(level) {
     switch (level) {
         case 'easy':
             n = 8;
-            numRows = 4;
-            numCols = 4;
+            numRows = numCols = 4;
             break;
         case 'medium':
             n = 18;
@@ -205,17 +209,22 @@ function resetGame() {
     initializeGame();
 }
 
+
+
 /**
  * Inicializa el juego con la dificultad actual.
  */
 function initializeGame() {
-    const shuffledLetters = shuffle(letters);
     const memoryBoard = document.getElementById('memoryBoard');
+    memoryBoard.innerHTML = ''; // Limpia el contenido del tablero
+
+    const shuffledLetters = shuffle(letters);
     shuffledLetters.forEach((value, index) => {
         const card = createCard(value);
         card.dataset.value = value;
         memoryBoard.appendChild(card);
     });
+
     startTimer();
     document.getElementById('timer').textContent = `Tiempo: ${timer} segundos`; 
     document.getElementById('score').textContent = `Puntaje: ${score}`;
@@ -230,3 +239,5 @@ document.addEventListener('transitionend', function(event) {
         event.target.classList.remove('flipping');
     }
 });
+
+
